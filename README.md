@@ -17,7 +17,7 @@ You can also execute unit tests in Visual Studio bt right-click on the [Test] at
 
 The main reason to write unit tests is to gain confidence. Unit tests allow us to make changes, with confidence that they will work.
 
-✔️**Unit tests allow change.**✔️
+**✔️Unit tests allow change.✔️**
 
 ### What makes a good unit test?
 
