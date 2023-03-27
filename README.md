@@ -55,16 +55,38 @@ In the apper scenraio, [XPLiteObject](https://docs.devexpress.com/XPO/DevExpress
 ```csharp
     public interface ISessionWrapper
     {
-        Session Session { get; set; }
+        Session Session { get; }
 
-        StatisticInfoMockSession GetLastStisticalInfo()
+        int Count();
+
+        StatisticInfoMockSession GetLastStisticalInfo();
+    }
+
+    
+    public class SessionWrapper : ISessionWrapper
+    {
+
+        public Session Session { get; }
+
+
+        public SessionWrapper(Session session)
+        {
+            Session = session;
+        }
+
+        public int Count()
+        {
+            return Session.Query<StatisticInfoMock>()
+                        .Select(info => info).Count();
+        }
+
+        public StatisticInfoMockSession GetLastStisticalInfo()
         {
             return Session.Query<StatisticInfoMockSession>()
                     .Select(info => info)
                     .Last();
         }
     }
-
     
     public class StatisicTestMockSessionTests
     {

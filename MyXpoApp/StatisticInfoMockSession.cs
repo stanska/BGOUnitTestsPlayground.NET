@@ -6,7 +6,7 @@ namespace MyXpoApp
     public class StatisticInfoMockSession : XPLiteObject
     {
 
-        ISessionWrapper SessionWrapper { get; set; }
+        ISessionWrapper SessionWrapper { get; }
         
         public StatisticInfoMockSession(ISessionWrapper sessionWrapper)
             : base(sessionWrapper.Session)

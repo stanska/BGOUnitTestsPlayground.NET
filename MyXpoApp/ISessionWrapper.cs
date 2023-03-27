@@ -11,18 +11,10 @@ namespace MyXpoApp
 
     public interface ISessionWrapper
     {
-        Session Session { get; set; }
+        Session Session { get; }
 
-        int Count() {
-            return Session.Query<StatisticInfoMock>()
-                        .Select(info => info).Count();
-        }
+        int Count();
 
-        StatisticInfoMockSession GetLastStisticalInfo()
-        {
-            return Session.Query<StatisticInfoMockSession>()
-                    .Select(info => info)
-                    .Last();
-        }
+        StatisticInfoMockSession GetLastStisticalInfo();
     }
 }
