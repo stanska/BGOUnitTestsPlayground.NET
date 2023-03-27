@@ -3,6 +3,8 @@ The repo contains sample tests using [Moq](https://github.com/moq/moq) and [nUni
 The same approach can be reused in all types of unit tests.
 
 TODO: Add samples for [xUnit](https://xunit.net/)
+TODO: Add sample not dependant on DevExpress
+
 
 ### Quick start
 
