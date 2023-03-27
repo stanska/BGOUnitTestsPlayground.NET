@@ -217,4 +217,6 @@ namespace Stringie.UnitTests
 
 https://docs.nunit.org/articles/nunit/technical-notes/usage/Parameterized-Tests.html
 
+[How to mock or stub a class without an interface](https://peterdaugaardrasmussen.com/2022/05/15/csharp-how-to-mock-or-stub-a-class-without-an-interface/)
+
 4 common [mistakes](https://canro91.github.io/2021/03/29/UnitTestingCommonMistakes/) when writing unit tests
