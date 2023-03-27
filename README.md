@@ -17,7 +17,7 @@ You can also execute unit tests in Visual Studio bt right-click on the [Test] at
 
 The main reason to write unit tests is to gain confidence. Unit tests allow us to make changes, with confidence that they will work.
 
-**Unit tests allow change.**
+✔️**Unit tests allow change.**✔️
 
 ### What makes a good unit test?
 
@@ -39,7 +39,8 @@ Mocking is a process used in unit testing when the unit being tested has externa
 + Mocks: A Mock is a much more sophisticated version of a Stub. It will still return values like a Stub, but it can also be programmed with expectations in terms of how many times each method should be called, in which order and with what data.
 
 #### Example
-XPO entites, inherit [XPLiteObject](https://docs.devexpress.com/XPO/DevExpress.Xpo.XPLiteObject) as the example [here](./MyXpoApp.UnitTests/StatisicTestMockSessionTests.cs)
+XPO entites, inherit [XPLiteObject](https://docs.devexpress.com/XPO/DevExpress.Xpo.XPLiteObject) as the example [here](./MyXpoApp.UnitTests/StatisicInfoMockSessionTests.cs).
+
 If we want to test [StatisticInfoMockSession](./MyXpoApp/StatisticInfoMockSession.cs) we can either use [in-memory DB](./MyXpoApp.UnitTests/StatisicInfoTests.cs) or create a mock and set it up, to behave in a [desired way](./MyXpoApp/StatisticInfoMockSession.cs).
 
 ```csharp
@@ -47,7 +48,7 @@ Mock<ISessionWrapper> sessionWrapperMock = new Mock<ISessionWrapper>();
 SessionWrapperMock.Setup(wrraper => wrraper.Count()).Returns(2);
 ```
 
-In the apper scenraio, [XPLiteObject](https://docs.devexpress.com/XPO/DevExpress.Xpo.XPLiteObject) is constructed with [Session](https://docs.devexpress.com/XPO/DevExpress.Xpo.Session) which is a concrete class. Since we can mock, with Moq framework, only interfaces and virtual methods and we don't cannot change [XPLiteObject](https://docs.devexpress.com/XPO/DevExpress.Xpo.XPLiteObject), we can make a [wrapper interface of the Session](./MyXpoApp/ISessionWrapper.cs) and mock it.
+In the apper scenraio, [XPLiteObject](https://docs.devexpress.com/XPO/DevExpress.Xpo.XPLiteObject) is constructed with [Session](https://docs.devexpress.com/XPO/DevExpress.Xpo.Session) which is a concrete class. Since we can mock, with [Moq](https://github.com/Moq/moq4/wiki/Quickstart) framework, ONLY interfaces and virtual methods and we cannot change [XPLiteObject](https://docs.devexpress.com/XPO/DevExpress.Xpo.XPLiteObject), we can make a [wrapper interface of the Session](./MyXpoApp/ISessionWrapper.cs) and mock it.
 
 ```csharp
     public interface ISessionWrapper
